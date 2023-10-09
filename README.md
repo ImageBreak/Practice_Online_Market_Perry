@@ -1,5 +1,6 @@
 # Practice_Online_Market_Perry
 练手用的小型网络商城项目
+就写写看吧，看看要多久
 
 ## 技术栈
 后端：SpringBoot + Spring + Mybatis + MySQL + JWT + Guava + Jmeter  
