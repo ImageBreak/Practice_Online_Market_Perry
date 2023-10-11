@@ -1,6 +1,7 @@
 package net.perry.online_class.domain;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Perry Class
@@ -18,6 +19,16 @@ public class Chapter {
     private Integer ordered;
 
     private Date createTime;
+
+    private List<Episode> episodeList;
+
+    public List<Episode> getEpisodeList() {
+        return episodeList;
+    }
+
+    public void setEpisodeList(List<Episode> episodeList) {
+        this.episodeList = episodeList;
+    }
 
     public Integer getId() {
         return id;
@@ -62,7 +73,7 @@ public class Chapter {
     @Override
     public String toString() {
         return "Chapter [id=" + id + ", videoId=" + videoId + ", title=" + title + ", ordered=" + ordered
-                + ", createTime=" + createTime + "]";
+                + ", createTime=" + createTime + ", episodeList=" + episodeList + "]";
     }
 
     
