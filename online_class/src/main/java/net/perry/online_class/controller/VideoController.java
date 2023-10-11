@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import net.perry.online_class.domain.Video;
 import net.perry.online_class.domain.VideoBanner;
-import net.perry.online_class.service.impl.VideoServiceImpl;
+import net.perry.online_class.service.VideoService;
 import net.perry.online_class.utils.JsonData;
 
 @RestController
@@ -18,7 +18,7 @@ import net.perry.online_class.utils.JsonData;
 public class VideoController {
 
     @Autowired
-    private VideoServiceImpl videoServiceImpl;
+    private VideoService videoService;
 
     /**
      * 轮播图列表
@@ -27,7 +27,7 @@ public class VideoController {
     @GetMapping("list_banner")
     public JsonData indexBanner(){
         
-        List<VideoBanner> bannerList = videoServiceImpl.listVideoBanner();
+        List<VideoBanner> bannerList = videoService.listVideoBanner();
 
         return JsonData.buildSuccess(bannerList);
     }
@@ -39,7 +39,7 @@ public class VideoController {
     @RequestMapping("list")
     public JsonData listVideo(){
         
-        List<Video> videoList = videoServiceImpl.listVideo();
+        List<Video> videoList = videoService.listVideo();
         return JsonData.buildSuccess(videoList);
     } 
     
@@ -51,7 +51,7 @@ public class VideoController {
     @GetMapping("find_detail_by_id")
     public JsonData findDetailById(@RequestParam(value = "video_id", required = true)int videoId){
         
-        Video video = videoServiceImpl.findDetailById(videoId);
+        Video video = videoService.findDetailById(videoId);
         
         return JsonData.buildSuccess(video);
     }

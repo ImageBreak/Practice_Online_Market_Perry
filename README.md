@@ -621,6 +621,7 @@ CREATE TABLE `user` (
   `phone` varchar(64) DEFAULT '' COMMENT '手机号',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
+  UNIQUE KEY `phone`(`phone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
