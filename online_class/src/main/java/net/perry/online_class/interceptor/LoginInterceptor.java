@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,6 +16,7 @@ import io.jsonwebtoken.Claims;
 import net.perry.online_class.utils.JWTUtils;
 import net.perry.online_class.utils.JsonData;
 
+@Component
 public class LoginInterceptor implements HandlerInterceptor{
 
     @Override

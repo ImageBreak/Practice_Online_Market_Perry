@@ -89,4 +89,14 @@ public class UserServiceImpl implements UserService{
             return token;
         }
     }
+
+    /**
+     * 根据用户ID查询用户信息实现
+     */
+    @Override
+    public User findByUserId(Integer userId) {
+        
+        User user = userMapper.findByUserId(userId);
+        return user;
+    }
 }

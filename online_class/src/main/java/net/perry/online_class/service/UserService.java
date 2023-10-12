@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import net.perry.online_class.model.entity.User;
+
 @Service
 public interface UserService {
     
@@ -21,5 +23,12 @@ public interface UserService {
      * @return
      */
     String findByPhoneAndPwd(String phone, String pwd);
+
+    /**
+     * 根据用户ID查询用户信息
+     * @param userId
+     * @return
+     */
+    User findByUserId(Integer userId);
     
 }

@@ -19,4 +19,8 @@
         select * from User where phone=#{phone} and pwd=#{pwd}
     </select>
 
+    <!-- 根据用户ID查询用户信息 -->
+    <select id="findByUserId" resultType="User">
+        select * from User where id=#{user_id}
+    </select>
 </mapper>

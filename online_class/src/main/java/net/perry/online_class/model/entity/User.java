@@ -2,6 +2,8 @@ package net.perry.online_class.model.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Perry Class
  * 
@@ -13,6 +15,7 @@ public class User {
 
     private String name;
 
+    @JsonIgnore
     private String pwd;
 
     private String headImg;
