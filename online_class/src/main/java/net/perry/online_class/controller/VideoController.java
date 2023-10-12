@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.perry.online_class.domain.Video;
-import net.perry.online_class.domain.VideoBanner;
+import net.perry.online_class.model.entity.Video;
+import net.perry.online_class.model.entity.VideoBanner;
 import net.perry.online_class.service.VideoService;
 import net.perry.online_class.utils.JsonData;
 

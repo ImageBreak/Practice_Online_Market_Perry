@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import net.perry.online_class.domain.Video;
-import net.perry.online_class.domain.VideoBanner;
+import net.perry.online_class.model.entity.Video;
+import net.perry.online_class.model.entity.VideoBanner;
 
 public interface VideoMapper {
     

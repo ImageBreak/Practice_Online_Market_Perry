@@ -1,4 +1,4 @@
-package net.perry.online_class.domain;
+package net.perry.online_class.model.entity;
 
 import java.util.Date;
 

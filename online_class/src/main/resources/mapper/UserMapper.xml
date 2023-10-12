@@ -14,4 +14,9 @@
         select * from User where phone=#{phone}
     </select>
 
+    <!-- 根据手机号和密码校验用户信息 -->
+    <select id="findByPhoneAndPwd" resultType="User">
+        select * from User where phone=#{phone} and pwd=#{pwd}
+    </select>
+
 </mapper>

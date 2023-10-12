@@ -1,11 +1,12 @@
 package net.perry.online_class.utils;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import net.perry.online_class.domain.User;
+import net.perry.online_class.model.entity.User;
 
 /**
  * JWT工具类
@@ -24,7 +25,7 @@ public class JWTUtils {
     /**
      * 加密密钥
      */
-    private static final String SECRET = "perry.net520";
+    private static final byte [] SECRET = "perry.net520".getBytes(StandardCharsets.UTF_8);
 
     /**
      * 令牌前缀

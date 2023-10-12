@@ -7,10 +7,11 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.perry.online_class.domain.User;
 import net.perry.online_class.mapper.UserMapper;
+import net.perry.online_class.model.entity.User;
 import net.perry.online_class.service.UserService;
 import net.perry.online_class.utils.CommonUtils;
+import net.perry.online_class.utils.JWTUtils;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -71,5 +72,21 @@ public class UserServiceImpl implements UserService{
         Random random = new Random();
         int index = random.nextInt(size);
         return headImg[index];
+    }
+
+    /**
+     * 校验用户登录的实现
+     */
+    @Override
+    public String findByPhoneAndPwd(String phone, String pwd) {
+        
+        User user = userMapper.findByPhoneAndPwd(phone, CommonUtils.MD5(pwd));
+
+        if (user == null){
+            return null;
+        }else{
+            String token = JWTUtils.genJsonWebToken(user);
+            return token;
+        }
     }
 }

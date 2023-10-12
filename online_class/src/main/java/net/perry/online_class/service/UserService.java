@@ -13,5 +13,13 @@ public interface UserService {
      * @return
      */
     int save(Map<String, String> userInfo);
+
+    /**
+     * 校验用户登录
+     * @param phone
+     * @param pwd
+     * @return
+     */
+    String findByPhoneAndPwd(String phone, String pwd);
     
 }

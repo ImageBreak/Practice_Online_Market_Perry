@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.perry.online_class.domain.Video;
-import net.perry.online_class.domain.VideoBanner;
 import net.perry.online_class.mapper.VideoMapper;
+import net.perry.online_class.model.entity.Video;
+import net.perry.online_class.model.entity.VideoBanner;
 import net.perry.online_class.service.VideoService;
 
 @Service
