@@ -63,7 +63,7 @@ public class LoginInterceptor implements HandlerInterceptor{
                         Integer id = (Integer) claims.get("id");
                         String name = (String) claims.get("name");
 
-                        request.setAttribute("id", id);
+                        request.setAttribute("user_id", id);
                         request.setAttribute("name", name);
 
                         return true;

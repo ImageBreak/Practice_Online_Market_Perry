@@ -22,6 +22,13 @@ public interface VideoMapper {
     List<VideoBanner> listVideoBanner();
 
     /**
+     * 查询视频信息
+     * @param videoId
+     * @return
+     */
+    Video findById(@Param("video_id") int videoId);
+
+    /**
      * 查询视频详情，章，集信息
      * @param videoId
      * @return
