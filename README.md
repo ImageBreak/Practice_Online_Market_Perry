@@ -710,5 +710,13 @@ VALUES
 	(5,'3424521',1,NULL,32,45,'Docker实战视频教程入门到高级dockerfile/compose-Harbor',NULL,5),
 	(6,'23',1,NULL,42,17,'互联网架构多线程并发编程高级教程',NULL,4);
 
-
+CREATE TABLE `play_record` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `video_id` int(11) DEFAULT NULL,
+  `current_num` int(11) DEFAULT NULL COMMENT '当前播放第几集',
+  `episode_id` int(11) DEFAULT NULL COMMENT '当前播放第几集视频id',
+  `create_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 ```

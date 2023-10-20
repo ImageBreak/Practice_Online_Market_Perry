@@ -6,8 +6,13 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import net.perry.online_class.exception.PerryException;
+import net.perry.online_class.mapper.EpisodeMapper;
+import net.perry.online_class.mapper.PlayRecordMapper;
 import net.perry.online_class.mapper.VideoMapper;
 import net.perry.online_class.mapper.VideoOrderMapper;
+import net.perry.online_class.model.entity.Episode;
+import net.perry.online_class.model.entity.PlayRecord;
 import net.perry.online_class.model.entity.Video;
 import net.perry.online_class.model.entity.VideoOrder;
 import net.perry.online_class.service.VideoOrderService;
@@ -20,6 +25,12 @@ public class VideoOrderServiceImpl implements VideoOrderService{
 
     @Autowired
     private VideoMapper videoMapper;
+
+    @Autowired
+    private EpisodeMapper episodeMapper;
+
+    @Autowired
+    private PlayRecordMapper playRecordMapper;
 
     /**
      * 下单操作
@@ -51,6 +62,22 @@ public class VideoOrderServiceImpl implements VideoOrderService{
         newVideoOrder.setVideoTitle(video.getTitle());
 
         int rows = videoOrderMapper.saveOrder(newVideoOrder);
+
+        //生成播放记录
+        if (rows != 0){
+            Episode episode = episodeMapper.findFirstEpisodeByVideoId(videoId);
+            if (episode == null){
+                throw new PerryException(-1, "视频没有集信息，请运营人员检查");
+            }
+            PlayRecord playRecord = new PlayRecord();
+            playRecord.setUserId(userId);
+            playRecord.setVideoId(videoId);
+            playRecord.setEpisodeId(episode.getId());
+            playRecord.setCurrentNum(episode.getNum());
+            playRecord.setCreateTime(new Date());
+
+            rows = playRecordMapper.saveRecord(playRecord);
+        }
         return rows;
     }
 }
