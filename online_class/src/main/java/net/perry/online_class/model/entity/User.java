@@ -2,7 +2,9 @@ package net.perry.online_class.model.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Perry Class
@@ -18,10 +20,13 @@ public class User {
     @JsonIgnore
     private String pwd;
 
+    @JsonProperty("head_img")
     private String headImg;
 
     private String phone;
 
+    @JsonProperty("create_time")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
     public Integer getId() {
