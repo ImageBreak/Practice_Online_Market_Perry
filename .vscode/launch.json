@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-OnlineClassApplication<online_class>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "net.perry.online_class.OnlineClassApplication",
+            "projectName": "online_class",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

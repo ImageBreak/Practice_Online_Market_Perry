@@ -1,6 +1,7 @@
 package net.perry.online_class.service.impl;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,5 +82,11 @@ public class VideoOrderServiceImpl implements VideoOrderService{
             rows = playRecordMapper.saveRecord(playRecord);
         }
         return rows;
+    }
+
+    @Override
+    public List<VideoOrder> listOrderByUserId(Integer userId) {
+        
+        return videoOrderMapper.listOrderByUserId(userId);
     }
 }
