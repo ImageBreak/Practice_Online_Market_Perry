@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.perry.online_class.exception.PerryException;
 import net.perry.online_class.mapper.EpisodeMapper;
@@ -40,6 +41,7 @@ public class VideoOrderServiceImpl implements VideoOrderService{
      * @return
      */
     @Override
+    @Transactional
     public int save(int userId, int videoId){
 
         //判断是否已经购买
@@ -62,7 +64,7 @@ public class VideoOrderServiceImpl implements VideoOrderService{
         newVideoOrder.setVideoTitle(video.getTitle());
 
         int rows = videoOrderMapper.saveOrder(newVideoOrder);
-
+    
         //生成播放记录
         if (rows != 0){
             Episode episode = episodeMapper.findFirstEpisodeByVideoId(videoId);

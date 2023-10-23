@@ -21,7 +21,7 @@ public class CustomExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public JsonData handle(Exception e){
-        logger.error("[ 系统异常 ]",e);
+        logger.error("[ 系统异常 ] {}",e.getMessage());
         if (e instanceof PerryException){
             PerryException perryException = (PerryException) e;
             return JsonData.buildSuccess(perryException);
