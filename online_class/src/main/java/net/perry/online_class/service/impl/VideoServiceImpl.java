@@ -55,14 +55,12 @@ public class VideoServiceImpl implements VideoService{
 
                 List<VideoBanner> bannerList = videoMapper.listVideoBanner();
                 //没走缓存
-                System.out.println("没走");
                 return bannerList;
 
             });
             if(cacheObject instanceof List){
 
                 List<VideoBanner> bannerList = (List<VideoBanner>) cacheObject;
-                System.out.println("走了");
                 return bannerList;
 
             }
