@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.perry</groupId>
-	<artifactId>online_class</artifactId>
+	<artifactId>online_class_back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>online_class</name>
 	<description>Demo project for Spring Boot</description>
