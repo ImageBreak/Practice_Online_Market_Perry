@@ -7,7 +7,7 @@
         <detail-course :videoInfo="videoInfo"></detail-course>
 
         <!-- 视频tab简介 -->
-        <detail-tab></detail-tab>
+        <detail-tab :videoInfo="videoInfo" :chapterList="chapterList"></detail-tab>
 
         <!-- 底部立刻购买 -->
         <footer></footer>
