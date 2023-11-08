@@ -1,7 +1,9 @@
 <template>
-  <!-- <home-banner> </home-banner>
-    <video-list></video-list> -->
-  <common-footer></common-footer>
+  <div>
+    <home-banner :banners = "banners"> </home-banner>
+    <video-list :videoList = "videoList"></video-list>
+    <common-footer></common-footer>
+  </div>
 </template>
 
 <script>
@@ -21,12 +23,11 @@ export default {
   data() {
     return {
       banners: [],
-      videolist: [],
+      videoList: [],
     };
   },
   //定义方法
   methods: {
-
     //获取轮播图数据
     async getBannerData() {
       try {
@@ -42,16 +43,16 @@ export default {
 
     //获取视频列表
     async getVideoListData() {
-        try {
-            const result = await getVideoList();
-            console.log(result);
-            if (result.data.code == 0) {
-                this.videoList = result.data.data;
-            }
-        } catch (error) {
-            console.log(error)
+      try {
+        const result = await getVideoList();
+        console.log(result);
+        if (result.data.code == 0) {
+          this.videoList = result.data.data;
         }
-    }
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
   mounted() {
     //页面渲染完成调用方法获取数据
