@@ -5,7 +5,11 @@
       </cube-tab>
     </cube-tab-bar>
 
-    <component :videoInfo="videoInfo" :chapterList="chapterList" :is='selectedLabel==="简介"?"Summary":"Catalog"'>
+    <component
+      :videoInfo="videoInfo"
+      :chapterList="chapterList"
+      :is="selectedLabel === '简介' ? 'Summary' : 'Catalog'"
+    >
     </component>
   </div>
 </template>
@@ -19,7 +23,7 @@ export default {
     Catalog,
   },
 
-  prrops: {
+  props: {
     videoInfo: {
       type: Object,
       required: true,
