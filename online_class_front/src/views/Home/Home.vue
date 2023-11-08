@@ -32,7 +32,6 @@ export default {
     async getBannerData() {
       try {
         const result = await getBanner();
-        console.log(result);
         if (result.data.code == 0) {
           this.banners = result.data.data;
         }
@@ -45,7 +44,6 @@ export default {
     async getVideoListData() {
       try {
         const result = await getVideoList();
-        console.log(result);
         if (result.data.code == 0) {
           this.videoList = result.data.data;
         }
