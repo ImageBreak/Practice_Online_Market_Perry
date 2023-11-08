@@ -4,7 +4,7 @@
         <detail-header :videoInfo="videoInfo"></detail-header>
 
         <!-- 视频介绍组件 -->
-        <detail-course></detail-course>
+        <detail-course :videoInfo="videoInfo"></detail-course>
 
         <!-- 视频tab简介 -->
         <detail-tab></detail-tab>
