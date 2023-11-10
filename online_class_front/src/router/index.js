@@ -29,17 +29,26 @@ const routes = [
   {
     path:"/order",
     name:"Order",
-    component:Order
+    component:Order,
+    meta:{
+      requiresAuth : true
+    }
   },
   {
     path:"/pay",
     name:"Pay",
-    component:Pay
+    component:Pay,
+    meta:{
+      requiresAuth : true
+    }
   },
   {
     path:"/personal",
     name:"Personal",
-    component:Personal
+    component:Personal,
+    meta:{
+      requiresAuth : true
+    }
   },
   {
     path:"/register",
