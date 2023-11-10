@@ -12,7 +12,7 @@
     <!-- 底部立刻购买 -->
     <footer>
       <router-link
-        :to="{ path: '/path', query: { video_id: this.$route.query.video_id } }"
+        :to="{ path: '/pay', query: { video_id: this.$route.query.video_id } }"
       >
         <button>立刻购买</button>
       </router-link>

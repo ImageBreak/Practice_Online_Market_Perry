@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.jsonwebtoken.Claims;
 import net.perry.online_class.model.entity.User;
 import net.perry.online_class.model.request.LoginRequest;
 import net.perry.online_class.service.UserService;
+import net.perry.online_class.utils.JWTUtils;
 import net.perry.online_class.utils.JsonData;
 
 @RestController
@@ -62,8 +64,9 @@ public class UserController {
      */
     @GetMapping("find_by_token")
     public JsonData findUserInfoByToken(HttpServletRequest request){
-
-        Integer userId = (Integer) request.getAttribute("id");
+        String token = request.getParameter("token");
+        Claims claims = JWTUtils.checkJWT(token);
+        Integer userId = (Integer) claims.get("id");
 
         if (userId == null){
             return JsonData.buildError("查询失败");

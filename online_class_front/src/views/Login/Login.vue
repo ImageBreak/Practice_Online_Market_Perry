@@ -69,7 +69,9 @@ export default {
         if (res.data.code === 0) {
           //登录成功，存储token
           localStorage.setItem("token", res.data.data);
-
+          
+          this.$store.dispatch("setToken", res.data.data);
+          
           //跳转页面，根据业务需要
           this.$router.push({path:"/"});
         } else {
