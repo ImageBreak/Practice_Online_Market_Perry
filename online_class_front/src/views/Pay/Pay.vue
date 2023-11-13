@@ -67,6 +67,14 @@ export default {
           });
           toast.show();
         }
+        else{
+          const toast = this.$createToast({
+            txt: "下单失败",
+            type: "error",
+            time: 1500,
+          });
+          toast.show();
+        }
       } catch (error) {
         console.log(error);
       }
